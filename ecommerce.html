@@ -1,0 +1,1489 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN-Ecommerce</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563EB",
+              secondary: "#06B6D4",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <header class="shadow sticky top-0 bg-slate-900 text-white z-50">
+      <div class="container mx-auto p-4">
+        <div class="flex justify-between items-center">
+          <a href="#" class="text-xl">
+            <div class="flex items-center font-semibold w-40">
+              <span class="text-primary">Gadgets</span>
+              <span class="text-secondary">Hub</span>
+            </div>
+          </a>
+
+          <nav class="hidden md:flex gap-6 text-sm">
+            <a href="#home" class="hover:text-primary transition">Home</a>
+            <a href="#product" class="hover:text-primary transition"
+              >Products</a
+            >
+            <a href="#popular" class="hover:text-primary transition">Popular</a>
+            <a href="#categories" class="hover:text-primary transition"
+              >Categories</a
+            >
+            <a href="#testimonial" class="hover:text-primary transition"
+              >Testimonial</a
+            >
+          </nav>
+
+          <div class="text-lg">
+            <i class="fa fa-user hover:text-primary transition"></i>
+            <i class="fa fa-cart-plus hover:text-primary ml-4 transition"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!--hero section-->
+      <section
+        id="home"
+        class="py-16 md:py-24 bg-gradient-to-r from-primary/90 via-sky-200 to-secondary/50 min-h-screen flex items-center"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between gap-10"
+          >
+            <!--content-->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
+              >
+                Incredible Prices On All Your Favorite Items
+              </h1>
+              <p class="text-white text-xl">
+                WITH <span class="font-semibold"> 10% Discount</span>
+              </p>
+
+              <div class="flex flex-col md:flex-row gap-y-3 gap-x-5">
+                <a
+                  href="#"
+                  class="w-auto bg-white text-primary font-medium px-6 py-3 rounded-2xl text-center hover:underline hover:bg-zinc-200 transition shadow-xl"
+                  >Shop Now</a
+                >
+                <a
+                  href="#"
+                  class="w-auto border-2 border-white text-white px-6 py-3 rounded-2xl text-center hover:underline hover:text-black transition shadow-xl"
+                  >Explore</a
+                >
+              </div>
+            </div>
+
+            <!--image-->
+            <div class="md:w-3/4">
+              <img
+                src="./assets/images/heros.png"
+                class="max-w-full h-auto float-right"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--why choose us -->
+      <section class="py-16 md:py-17">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center mb-4">Why Choose Us:</h2>
+          <div class="mb-10">
+            <p class="text-gray-700 text-center">
+              At Gadget Hub, we make discovering cool gadgets easy and fun.
+              Whether you’re hunting for the latest must-have device or a smart
+              tool for everyday life, you’ll find it here carefully picked and
+              ready to impress. Shop with confidence knowing you’re getting
+              great value, quick delivery, and support from people who love tech
+              as much as you do. Dive in and explore your new favorite gadgets
+              with us!
+            </p>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-7">
+            <!-- Quality Product -->
+            <div
+              class="bg-slate-200 py-5 px-7 rounded-xl shadow-md flex flex-col flex-1"
+            >
+              <div class="text-4xl text-secondary mb-2">
+                <i class="fa fa-check"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Quality Product</h3>
+              <p class="text-gray-700 flex-1">
+                Every gadget is carefully selected to deliver top performance
+                and lasting reliability.
+              </p>
+            </div>
+
+            <!-- Delivery -->
+            <div
+              class="bg-slate-200 py-5 px-7 rounded-xl shadow-md flex flex-col flex-1"
+            >
+              <div class="text-4xl text-secondary mb-2">
+                <i class="fa fa-truck"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Delivery</h3>
+              <p class="text-gray-700 flex-1">
+                We ensure your gadgets arrive quickly and safely, right to your
+                doorstep, so you can start enjoying them without delay.
+              </p>
+            </div>
+
+            <!-- Easy Returns -->
+            <div
+              class="bg-slate-200 py-5 px-7 rounded-xl shadow-md flex flex-col flex-1"
+            >
+              <div class="text-4xl text-secondary mb-2">
+                <i class="fa fa-undo"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Easy Returns</h3>
+              <p class="text-gray-700 flex-1">
+                Hassle-free returns and exchanges for your peace of mind. Not
+                satisfied? Our easy return policy ensures a smooth, stress-free
+                process.
+              </p>
+            </div>
+
+            <!-- Best Prices -->
+            <div
+              class="bg-slate-200 py-5 px-7 rounded-xl shadow-md flex flex-col flex-1"
+            >
+              <div class="text-4xl text-secondary mb-2">
+                <i class="fa fa-tag"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Best Prices</h3>
+              <p class="text-gray-700 flex-1">
+                Get top-quality gadgets without breaking the bank—great value
+                guaranteed. Competitive prices on premium gadgets so you get the
+                best bang for your money.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--product section-->
+      <section id="product" class="py-16 bg-slate-100">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-4xl font-bold text-center mb-10">
+              Featured Products
+            </h2>
+            <p class="text-gray-700 text-center">
+              Showcasing our exclusive picks—innovative gadgets that stand out
+              from the crowd.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/huawei.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">Huawei Earbuds</h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.2,899</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.3,000
+                    </span>
+                  </div>
+                  <button class="text-primary" title="Add to cart">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/ankerpowerbank.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">
+                  Anker 323 USB-C Power Bank
+                </h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.4,499</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.5,000
+                    </span>
+                  </div>
+                  <button class="text-primary" title="Add to cart">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/canon camera.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">Canon EOS R5</h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.3,70,000</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.3,75,000
+                    </span>
+                  </div>
+                  <button type="button" class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/drone.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">DJI Mavic Mini - Drone</h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.50,600</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.53,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/gopro.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">GoPro Hero 3+</h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.51,000</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.54,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/ipad.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">
+                  Apple iPad 10th generation
+                </h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.99,500</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.1,05,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/logitechmouse.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">
+                  Logitech MX Master 3S Mouse
+                </h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.13,700</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.14,500
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/sonyheadphone.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">
+                  Sony WH-CH700N Bluetooth Headphone
+                </h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.14,300</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.16,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/speaker.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">
+                  AMAZON ECHO DOT 2ND GEN RS03QR SMART SPEAKER
+                </h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.1,700</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.2,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-md">
+              <div class="relative">
+                <img
+                  src="./assets/images/vr.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-1 py-2"
+                  >-10%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-xl">Oculus Quest 2</h3>
+                <div class="text-yellow-400 text-sm py-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span class="text-gray-500">(225)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="font-bold text-primary mr-2">Rs.45,000</span>
+                    <span
+                      class="line-through text-gray-500 text-sm text-secondary"
+                      >Rs.47,000
+                    </span>
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center m-12">
+            <a
+              href="#products"
+              class="text-white bg-primary px-6 py-3 rounded-xl font-medium hover:bg-secondary hover:text-black transition"
+              >View All Products</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!--popular-->
+      <section id="popular" class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-4xl font-bold text-center mb-10">
+              Popular Products
+            </h2>
+            <p class="text-gray-700 text-center">
+              Explore the gadgets everyone is talking about—from wireless
+              earbuds to smart home devices. These popular picks combine
+              innovation, style, and unbeatable performance, making them the top
+              choice for tech enthusiasts.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Apple Watch -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/applewatch.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >BestSeller</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">Apple Watch</h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    Stay connected and track your fitness with the sleek and
+                    powerful Apple Watch.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.45,000</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Apple AirTag -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/airtag.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Trending</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">
+                  Apple AirTag (4 Pack)
+                </h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    Easily locate your keys, bags, and more with Apple’s compact
+                    Bluetooth tracker.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.6,900</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Nest Mini -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/google nest.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Out Of Stock</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">Google Nest Mini</h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    A smart speaker with rich sound and the Google Assistant
+                    built in to help you hands-free.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.4,058</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Apple iPad Pro M2 -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/ipadpro.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Price Drop</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">Apple iPad Pro M2</h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    A blazing-fast tablet with the M2 chip for pro-level
+                    performance and creativity.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.1,84,500</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- JBL Flip 6 -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/jbl.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Popular Choice</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">
+                  JBL Flip 6 Bluetooth Speaker
+                </h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    Portable waterproof Bluetooth speaker delivering bold sound
+                    and deep bass.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.3,099</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- JBL Headphone -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/jblheadphone.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >New Arrival</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">JBL Headphone</h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    Enjoy immersive audio and comfortable wear with JBL’s
+                    signature sound quality.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.2,950</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung Galaxy S24 Ultra -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/s24.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Customer Favorite</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-lg mb-2">
+                  Samsung Galaxy S24 Ultra
+                </h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    A cutting-edge smartphone with an epic camera system and
+                    powerful performance.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.1,02,355</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nintendo Switch -->
+            <div class="bg-white rounded-3xl shadow-md flex flex-col h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/Nintendoconsol.jpg"
+                  class="rounded-t-3xl w-full h-48 object-cover"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 right-3 bg-secondary text-white rounded-full text-xs px-3 py-2"
+                  >Only Few Left</span
+                >
+              </div>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="font-semibold text-xl mb-2">
+                  Nintendo Switch OLED Model
+                </h3>
+                <div class="text-secondary text-sm flex-1">
+                  <p>
+                    Versatile gaming console with a vibrant 7-inch OLED screen
+                    for an enhanced experience.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="font-bold text-primary">Rs.49,999</span>
+                  <button
+                    class="bg-primary text-white rounded-2xl px-3 py-1 text-sm flex items-center gap-1"
+                  >
+                    <span>Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--categories-->
+
+      <!-- Categories -->
+      <section id="categories" class="py-16 bg-slate-100">
+        <div class="container mx-auto px-4">
+          <div class="mb-12 text-center">
+            <h2 class="text-4xl font-bold mb-4">Shop by Category</h2>
+            <p class="text-gray-600">
+              Choose your favorite category and explore premium gadgets.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <!-- Category Card -->
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-laptop"></i>
+              </div>
+              <h3 class="font-semibold">Laptops</h3>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-mobile"></i>
+              </div>
+              <h3 class="font-semibold">Smartphones</h3>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-headphones"></i>
+              </div>
+              <h3 class="font-semibold">Audio</h3>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-camera"></i>
+              </div>
+              <h3 class="font-semibold">Cameras</h3>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-gamepad"></i>
+              </div>
+              <h3 class="font-semibold">Gaming</h3>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+            >
+              <div
+                class="text-primary text-4xl bg-slate-100 p-5 rounded-full inline-block mb-4"
+              >
+                <i class="fa fa-tablet"></i>
+              </div>
+              <h3 class="font-semibold">Tablets</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================== FAQs ================== -->
+      <section id="faq" class="py-16 bg-slate-100">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p class="text-gray-600">
+              Find answers to common questions about orders, delivery, and
+              support.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">How long does delivery take?</h3>
+              <p class="text-gray-600">
+                Delivery usually takes 3–7 business days depending on your
+                location.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">Do you offer cash on delivery?</h3>
+              <p class="text-gray-600">
+                Yes, we offer Cash on Delivery in selected regions.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">Can I return a product?</h3>
+              <p class="text-gray-600">
+                Yes, we offer a 7-day return policy for unused products.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">How can I track my order?</h3>
+              <p class="text-gray-600">
+                Once shipped, you will receive a tracking link via email or SMS.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">Are the products original?</h3>
+              <p class="text-gray-600">
+                Yes, we sell only 100% authentic and quality-checked products.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">
+                What payment methods are accepted?
+              </h3>
+              <p class="text-gray-600">We accept online banking, and COD.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">Can I cancel my order?</h3>
+              <p class="text-gray-600">
+                Orders can be cancelled before they are shipped.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-5">
+              <h3 class="font-semibold mb-2">How do I contact support?</h3>
+              <p class="text-gray-600">
+                You can reach us via the Contact Us section or email
+                support@gadgethub.com.
+              </p>
+            </div>
+            <div class="text-center p-5">
+              <a
+                href="#questions"
+                class="text-white bg-primary px-6 py-3 rounded-xl font-medium hover:bg-secondary hover:text-black transition"
+                >View More Questions</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================== POLICIES SECTION ================== -->
+      <section id="policies" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl space-y-12">
+          <!-- SHIPPING POLICY -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Shipping Policy
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              All orders are processed within 2 business days. Delivery times
+              may vary based on location. Shipping charges depend on your region
+              and will be calculated at checkout.
+            </p>
+          </div>
+
+          <!-- RETURN POLICY -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Return Policy</h2>
+            <p class="text-gray-600 leading-relaxed">
+              Returns are accepted within 7 days of delivery for unused products
+              only. Refunds will be processed within 5 business days after we
+              receive the returned item.
+            </p>
+          </div>
+
+          <!-- PRIVACY POLICY -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Privacy Policy
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              We value your privacy. All personal data is stored securely and
+              never shared with third parties. We use cookies to improve user
+              experience and analyze website traffic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--testimonials-->
+
+      <section id="testimonial" class="py-16 bg-slate-100">
+        <section id="testimonial" class="py-16">
+          <div class="container mx-auto px-4">
+            <div class="mb-10">
+              <h2 class="text-3xl font-semibold text-center mb-4">
+                What Our Visitors Say
+              </h2>
+              <p class="text-gray-600 text-center text-lg">
+                Hear From Our Website Users
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Card 1 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/i2.jpg"
+                    alt="David Lee"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  David Lee
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "Shopping at Gadget Hub was smooth and reliable. My order
+                  arrived quickly and exactly as shown. Will definitely buy
+                  again!"
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/i1.jpg"
+                    alt="John Smith"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  John Smith
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "I found the perfect phone accessory at a great price. The
+                  site is easy to use and delivery was faster than expected."
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/ig1.jpg"
+                    alt="Sarah Lopez"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  Sarah Lopez
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "Gadget Hub always has what I need — from smartwatches to
+                  chargers. I’ve stopped browsing anywhere else!"
+                </p>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/i4.jpg"
+                    alt="Ayan Malhotra"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  Ayan Malhotra
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "I ordered wireless earbuds and they sound amazing. The
+                  product quality was way better than I expected for the price!"
+                </p>
+              </div>
+
+              <!-- Card 5 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/i3.jpg"
+                    alt="Will Cox"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">Will Cox</p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "Customer support was super helpful when I had a question. I
+                  felt confident shopping here — really professional."
+                </p>
+              </div>
+
+              <!-- Card 6 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/ig.jpg"
+                    alt="Kenzie Ibarra"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  Kenzie Ibarra
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "Found a cool gadget for my brother’s birthday. He loved it!
+                  Thanks, Gadget Hub, for making tech gifting simple."
+                </p>
+              </div>
+
+              <!-- Card 7 -->
+              <div
+                class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src="./assets/images/igg.jpg"
+                    alt="Oliver Ward"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  />
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-1">
+                  Oliver Ward
+                </p>
+                <div class="text-yellow-500 text-sm py-3">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="text-slate-500 text-xl">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p class="text-sm text-slate-600 text-justify">
+                  "The site is well-organized and offers real value. Got exactly
+                  what I ordered, and it works perfectly."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!--call to action-->
+      <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-4xl font-bold text-center mb-10">
+              Never Miss an Update
+            </h2>
+            <p class="text-center">
+              Be the first to know about our newest arrivals, exclusive deals,
+              and trending gadgets. Sign up today and never miss an update—get
+              insider access to special discounts, product tips, and the latest
+              tech trends delivered straight to your inbox.
+            </p>
+          </div>
+          <form
+            action="#"
+            class="flex flex-col md:flex-row gap-3 justify-center"
+          >
+            <input
+              type="email"
+              name="Email"
+              id="Email"
+              placeholder="*Email Address"
+              class="px-4 py-3 rounded-lg text-slate-800 lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <button
+              class="bg-red-600 px-6 py-3 rounded-xl hover:bg-red-500 hover:text-black font-medium tranistion"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-gray-300 pt-14 pb-8">
+      <!-- Top Footer -->
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">
+              <span class="text-primary">Gadgets</span>
+              <span class="text-secondary">Hub</span>
+            </h2>
+            <p class="text-sm leading-6">
+              Your trusted destination for premium gadgets, smart devices, and
+              trending tech products at unbeatable prices.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#home" class="hover:text-primary transition">Home</a>
+              </li>
+              <li>
+                <a href="#product" class="hover:text-primary transition"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="#popular" class="hover:text-primary transition"
+                  >Popular</a
+                >
+              </li>
+              <li>
+                <a href="#categories" class="hover:text-primary transition"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#testimonial" class="hover:text-primary transition"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold text-white mb-3">We Accept</h3>
+
+            <div class="flex items-center gap-4">
+              <img
+                src="assets/images/payments/esewa.png"
+                alt="eSewa"
+                class="h-10 w-auto rounded"
+              />
+              <img
+                src="assets/images/payments/khalti.png"
+                alt="Khalti"
+                class="h-10 w-auto rounded"
+              />
+              <img
+                src="assets/images/payments/fonepay.png"
+                alt="FonePay"
+                class="h-10 w-auto rounded"
+              />
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Newsletter</h3>
+            <p class="text-sm mb-4">
+              Subscribe to get updates on new arrivals and special offers.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full px-3 py-2 rounded-l-lg text-black focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-secondary transition"
+              >
+                <i class="fa fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider (Full Width) -->
+      <hr class="border-slate-700 my-8" />
+
+      <!-- Bottom Footer -->
+      <div class="container mx-auto px-6 text-center text-sm text-gray-400">
+        <p>
+          © 2026 <span class="text-white font-medium">Gadget Hub</span>. All
+          Rights Reserved.
+        </p>
+
+        <!-- Social -->
+        <div class="flex justify-center gap-6 mt-4 text-lg">
+          <a href="#fb" class="hover:text-primary transition"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-primary transition"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="hover:text-primary transition"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-primary transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+
+        <!-- Contact Line -->
+        <div class="mt-4 flex flex-wrap justify-center gap-6">
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-at text-red-400"></i>
+            <p>support@gadgethub.com</p>
+          </span>
+
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-phone text-red-400"></i>
+            <p>+123 456 7890</p>
+          </span>
+
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-location-crosshairs text-red-400"></i>
+            <p>123 Gadget Street, Tech City</p>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
